@@ -1,0 +1,8 @@
+{
+  "name": "Crumb & Co. Baking Studio",
+  "description": "Hands-on baking classes, pre-measured Bakers Easy Packs, artisanal premixes, and studio bakeware with member loyalty rewards and scheduled delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
