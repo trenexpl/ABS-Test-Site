@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowRight, Calendar, Clock, Search, UserCheck } from 'lucide-react';
 import { CATALOG_ITEMS } from './data/catalog.ts';
 import type { CartItem, CatalogItem, CategoryId, MemberUser, OrderRecord } from './types.ts';
-import { Header } from './components/Header.tsx';
+import { Header, STUDIO_LOGO_URL } from './components/Header.tsx';
 import { ProductArtwork } from './components/ProductArtwork.tsx';
 import { ProductModal } from './components/ProductModal.tsx';
 import { CartCheckoutDrawer } from './components/CartCheckoutDrawer.tsx';
@@ -184,7 +184,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F9F9F7] text-[#1D1B18]">
+    <div className="min-h-screen flex flex-col bg-[#FFF9F2] text-[#472E22]">
       <Header
         activeView={activeView}
         activeCategory={activeCategory}
@@ -219,14 +219,14 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
               <div className="lg:col-span-6 flex flex-col justify-between py-2 space-y-6">
                 <div className="space-y-4">
-                  <p className="text-xs font-medium text-[#2E4A3D] tracking-wide">
-                    Artisanal Baking Studio · Pre-Measured Kits &amp; Bakeware
+                  <p className="text-xs font-semibold text-[#C6583E] tracking-wide">
+                    ATB Baking Studio · Hands-On Classes &amp; Pre-Measured Bake Packs
                   </p>
-                  <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[#1D1B18] leading-[1.08] tracking-tight [text-wrap:balance]">
+                  <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[#472E22] leading-[1.08] tracking-tight [text-wrap:balance]">
                     Bake studio-grade pastries at home, weighed to the gram.
                   </h1>
-                  <p className="text-base text-[#4D4943] leading-relaxed max-w-xl">
-                    Book small-group hands-on baking classes or shop Bakers Easy Packs, small-batch premixes, and platinum silicone moulds—delivered on your chosen date and time slot.
+                  <p className="text-base text-[#6E4E3E] leading-relaxed max-w-xl">
+                    Join our friendly hands-on baking workshops or shop Bakers Easy Packs, small-batch premixes, and studio moulds—delivered on your chosen date and time slot.
                   </p>
                 </div>
 
@@ -234,7 +234,7 @@ export default function App() {
                   <button
                     type="button"
                     onClick={() => handleSelectCategory('easy-packs')}
-                    className="inline-flex items-center gap-2 h-11 px-6 rounded-lg bg-[#2E4A3D] text-white text-sm font-medium hover:bg-[#233A2F] transition-colors whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center gap-2 h-11 px-6 rounded-lg bg-[#C6583E] text-white text-sm font-medium hover:bg-[#B04A32] transition-colors whitespace-nowrap cursor-pointer"
                   >
                     <span>Explore Easy Packs</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -246,9 +246,9 @@ export default function App() {
                       setActiveView('members');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="inline-flex items-center gap-2 h-11 px-5 rounded-lg border border-[#D4CFC5] bg-white text-[#1D1B18] text-sm font-medium hover:border-[#2E4A3D] hover:bg-[#F3F2EE] transition-colors whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center gap-2 h-11 px-5 rounded-lg border border-[#E2C6AF] bg-white text-[#472E22] text-sm font-medium hover:border-[#C6583E] hover:bg-[#FDF0EB] transition-colors whitespace-nowrap cursor-pointer"
                   >
-                    <UserCheck className="w-4 h-4 text-[#2E4A3D]" aria-hidden="true" />
+                    <UserCheck className="w-4 h-4 text-[#C6583E]" aria-hidden="true" />
                     <span>
                       {member
                         ? `Member Points: ${member.loyaltyPoints.toLocaleString()} pts`
@@ -258,23 +258,23 @@ export default function App() {
                 </div>
 
                 {/* Full-width 3-column Trust & Delivery Summary Strip */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#E5E3DC] text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#EAD5C2] text-xs">
                   <div>
-                    <div className="font-semibold text-[#1D1B18]">Standard Delivery</div>
-                    <div className="text-[#625E57] mt-0.5 tabular-nums">10:00 AM – 6:00 PM ($0)</div>
+                    <div className="font-semibold text-[#472E22]">Standard Delivery</div>
+                    <div className="text-[#7B5D4D] mt-0.5 tabular-nums">10:00 AM – 6:00 PM ($0)</div>
                   </div>
                   <div>
-                    <div className="font-semibold text-[#1D1B18]">Express 2-Hr Timing</div>
-                    <div className="text-[#625E57] mt-0.5 tabular-nums">4 timed windows (+$15)</div>
+                    <div className="font-semibold text-[#472E22]">Express 2-Hr Timing</div>
+                    <div className="text-[#7B5D4D] mt-0.5 tabular-nums">4 timed windows (+$15)</div>
                   </div>
                   <div>
-                    <div className="font-semibold text-[#1D1B18]">Member Loyalty</div>
-                    <div className="text-[#625E57] mt-0.5 tabular-nums">10 pts per $1 spent</div>
+                    <div className="font-semibold text-[#472E22]">Member Loyalty</div>
+                    <div className="text-[#66753D] font-medium mt-0.5 tabular-nums">10 pts per $1 spent</div>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-[#E5E3DC] aspect-[4/3] lg:aspect-auto lg:min-h-[430px]">
+              <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-[#EAD5C2] aspect-[4/3] lg:aspect-auto lg:min-h-[430px] bg-[#F9EDE0]">
                 <ProductArtwork variant="hero" className="lg:h-full" />
               </div>
             </div>
@@ -284,21 +284,21 @@ export default function App() {
           <section
             ref={catalogRef}
             id="collection"
-            className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14 border-t border-[#E5E3DC]"
+            className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14 border-t border-[#EAD5C2]"
           >
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div className="space-y-1.5">
-                <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#1D1B18]">
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#472E22]">
                   Studio Classes, Packs &amp; Bakeware
                 </h2>
-                <p className="text-sm text-[#625E57]">
+                <p className="text-sm text-[#7B5D4D]">
                   Select any workshop to pick a studio date, or add pre-measured packs and moulds directly to your bag.
                 </p>
               </div>
 
               <div className="relative w-full md:w-64">
                 <Search
-                  className="w-4 h-4 text-[#78746C] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                  className="w-4 h-4 text-[#8C6A58] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
                   aria-hidden="true"
                 />
                 <input
@@ -307,7 +307,7 @@ export default function App() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search packs, moulds, classes..."
                   aria-label="Search baking products and classes"
-                  className="w-full h-10 pl-9 pr-3 text-sm rounded-lg border border-[#D9D5CC] bg-white text-[#1D1B18] placeholder:text-[#8C877E] focus:outline-none focus:border-[#2E4A3D]"
+                  className="w-full h-10 pl-9 pr-3 text-sm rounded-lg border border-[#E2C6AF] bg-white text-[#472E22] placeholder:text-[#A48371] focus:outline-none focus:border-[#C6583E]"
                 />
               </div>
             </div>
@@ -316,7 +316,7 @@ export default function App() {
             <div
               role="tablist"
               aria-label="Filter collection by category"
-              className="flex flex-wrap items-center gap-1.5 p-1 bg-[#EFEDE8] rounded-xl w-fit mb-8"
+              className="flex flex-wrap items-center gap-1.5 p-1 bg-[#F5E6D6] rounded-xl w-fit mb-8"
             >
               {categoryTabs.map((tab) => {
                 const active = activeCategory === tab.id;
@@ -329,8 +329,8 @@ export default function App() {
                     onClick={() => setActiveCategory(tab.id)}
                     className={`px-3.5 py-2 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                       active
-                        ? 'bg-white text-[#1D1B18] shadow-xs'
-                        : 'text-[#625E57] hover:text-[#1D1B18]'
+                        ? 'bg-white text-[#472E22] shadow-xs'
+                        : 'text-[#7B5D4D] hover:text-[#472E22]'
                     }`}
                   >
                     {tab.label}
@@ -341,11 +341,11 @@ export default function App() {
 
             {/* 3-Column Product Grid */}
             {filteredItems.length === 0 ? (
-              <div className="rounded-xl bg-white border border-[#E5E3DC] p-12 text-center space-y-2">
-                <p className="font-display text-lg font-medium text-[#1D1B18]">
+              <div className="rounded-xl bg-[#FFFDF9] border border-[#EAD5C2] p-12 text-center space-y-2">
+                <p className="font-display text-lg font-medium text-[#472E22]">
                   No matching items found
                 </p>
-                <p className="text-sm text-[#625E57]">
+                <p className="text-sm text-[#7B5D4D]">
                   Try clearing your search or switching back to All Collection.
                 </p>
                 <button
@@ -354,7 +354,7 @@ export default function App() {
                     setActiveCategory('all');
                     setSearchQuery('');
                   }}
-                  className="mt-2 px-4 py-2 text-xs font-medium rounded-lg border border-[#D9D5CC] bg-[#F9F9F7] hover:border-[#2E4A3D] cursor-pointer"
+                  className="mt-2 px-4 py-2 text-xs font-medium rounded-lg border border-[#E2C6AF] bg-[#FFF9F2] text-[#472E22] hover:border-[#C6583E] cursor-pointer"
                 >
                   Reset Filters
                 </button>
@@ -364,12 +364,12 @@ export default function App() {
                 {filteredItems.map((item) => (
                   <article
                     key={item.id}
-                    className="group bg-white border border-[#E5E3DC] rounded-xl overflow-hidden flex flex-col transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-md"
+                    className="group bg-[#FFFDF9] border border-[#EAD5C2] rounded-xl overflow-hidden flex flex-col transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-md hover:border-[#E47D61]/70"
                   >
                     <button
                       type="button"
                       onClick={() => setSelectedItem(item)}
-                      className="block w-full aspect-[4/3] bg-[#F1F0EB] overflow-hidden text-left cursor-pointer"
+                      className="block w-full aspect-[4/3] bg-[#F9EDE0] overflow-hidden text-left cursor-pointer"
                     >
                       <ProductArtwork
                         variant={item.artwork}
@@ -379,14 +379,14 @@ export default function App() {
 
                     <div className="p-5 flex-1 flex flex-col justify-between gap-4">
                       <div className="space-y-1.5">
-                        <div className="flex items-center justify-between gap-2 text-xs text-[#6E6A63]">
+                        <div className="flex items-center justify-between gap-2 text-xs text-[#8C6A58]">
                           <div className="flex items-center gap-1.5 truncate">
                             <span>{item.categoryLabel}</span>
                             <span aria-hidden="true">·</span>
                             <span>{item.metaLeft}</span>
                           </div>
                           {item.tag && (
-                            <span className="text-[11px] font-medium text-[#2E4A3D] shrink-0">
+                            <span className="text-[11px] font-semibold text-[#C6583E] shrink-0">
                               {item.tag}
                             </span>
                           )}
@@ -397,18 +397,18 @@ export default function App() {
                           onClick={() => setSelectedItem(item)}
                           className="text-left block w-full cursor-pointer"
                         >
-                          <h3 className="text-base font-semibold text-[#1D1B18] group-hover:text-[#2E4A3D] transition-colors leading-snug">
+                          <h3 className="text-base font-semibold text-[#472E22] group-hover:text-[#C6583E] transition-colors leading-snug">
                             {item.title}
                           </h3>
                         </button>
 
-                        <p className="text-xs text-[#625E57] leading-relaxed line-clamp-2">
+                        <p className="text-xs text-[#7B5D4D] leading-relaxed line-clamp-2">
                           {item.subtitle}
                         </p>
                       </div>
 
-                      <div className="pt-3 border-t border-[#F0EEE8] flex items-center justify-between gap-3">
-                        <span className="text-[15px] font-semibold text-[#1D1B18] tabular-nums">
+                      <div className="pt-3 border-t border-[#F4E6D8] flex items-center justify-between gap-3">
+                        <span className="text-[15px] font-semibold text-[#472E22] tabular-nums">
                           ${item.price.toFixed(2)}
                         </span>
 
@@ -416,7 +416,7 @@ export default function App() {
                           <button
                             type="button"
                             onClick={() => setSelectedItem(item)}
-                            className="h-9 px-3 text-xs font-medium rounded-lg border border-[#D9D5CC] text-[#4D4943] hover:text-[#1D1B18] hover:border-[#A8A298] transition-colors whitespace-nowrap cursor-pointer"
+                            className="h-9 px-3 text-xs font-medium rounded-lg border border-[#E2C6AF] text-[#6E4E3E] hover:text-[#472E22] hover:border-[#C6583E] transition-colors whitespace-nowrap cursor-pointer"
                           >
                             {item.category === 'classes' ? 'Dates' : 'Details'}
                           </button>
@@ -429,7 +429,7 @@ export default function App() {
                                 handleAddToCart(item, 1);
                               }
                             }}
-                            className="h-9 px-3.5 text-xs font-medium rounded-lg bg-[#2E4A3D] text-white hover:bg-[#233A2F] transition-colors whitespace-nowrap cursor-pointer"
+                            className="h-9 px-3.5 text-xs font-medium rounded-lg bg-[#C6583E] text-white hover:bg-[#B04A32] transition-colors whitespace-nowrap cursor-pointer"
                           >
                             {item.category === 'classes' ? 'Book Seat' : 'Add to Bag'}
                           </button>
@@ -443,49 +443,49 @@ export default function App() {
           </section>
 
           {/* Section 3: Scheduled Delivery & Member Loyalty Club */}
-          <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-[#E5E3DC]">
+          <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-[#EAD5C2]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              <div className="lg:col-span-6 rounded-2xl bg-white border border-[#E5E3DC] p-7 sm:p-9 flex flex-col justify-between space-y-6">
+              <div className="lg:col-span-6 rounded-2xl bg-[#FFFDF9] border border-[#EAD5C2] p-7 sm:p-9 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <p className="text-xs font-medium text-[#2E4A3D]">Flexible Checkout Scheduling</p>
-                  <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#1D1B18]">
+                  <p className="text-xs font-semibold text-[#C6583E]">Flexible Checkout Scheduling</p>
+                  <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#472E22]">
                     Choose your exact delivery date and 2-hour window.
                   </h2>
-                  <p className="text-sm text-[#4D4943] leading-relaxed">
-                    Whether you are baking for a weekend dinner or gifting a mould set, select your preferred delivery date at checkout. Choose complimentary Standard Timing or upgrade to a guaranteed Express 2-hour window.
+                  <p className="text-sm text-[#6E4E3E] leading-relaxed">
+                    Whether you are baking for a weekend gathering or gifting a mould set, select your preferred delivery date at checkout. Choose complimentary Standard Timing or upgrade to a guaranteed Express 2-hour window.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-[#F9F9F7] border border-[#E5E3DC] space-y-1">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-[#1D1B18]">
-                      <Calendar className="w-4 h-4 text-[#2E4A3D]" aria-hidden="true" />
+                  <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EAD5C2] space-y-1">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-[#472E22]">
+                      <Calendar className="w-4 h-4 text-[#C6583E]" aria-hidden="true" />
                       <span>Standard Timing ($0)</span>
                     </div>
-                    <p className="text-xs text-[#625E57] tabular-nums">10:00 AM – 6:00 PM</p>
+                    <p className="text-xs text-[#7B5D4D] tabular-nums">10:00 AM – 6:00 PM</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-[#F9F9F7] border border-[#E5E3DC] space-y-1">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-[#1D1B18]">
-                      <Clock className="w-4 h-4 text-[#2E4A3D]" aria-hidden="true" />
+                  <div className="p-4 rounded-xl bg-[#FFF9F2] border border-[#EAD5C2] space-y-1">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-[#472E22]">
+                      <Clock className="w-4 h-4 text-[#C6583E]" aria-hidden="true" />
                       <span>Express Windows (+$15)</span>
                     </div>
-                    <p className="text-xs text-[#625E57] tabular-nums">
+                    <p className="text-xs text-[#7B5D4D] tabular-nums">
                       10–12 · 12–2 · 2–4 · 4–6 PM
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-6 rounded-2xl bg-[#2E4A3D] text-white p-7 sm:p-9 flex flex-col justify-between space-y-6">
+              <div className="lg:col-span-6 rounded-2xl bg-[#5D3D2E] text-white p-7 sm:p-9 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <p className="text-xs font-medium text-[#C5D8CD]">Crumb &amp; Co. Member Rewards</p>
+                  <p className="text-xs font-medium text-[#F7C5B4]">ATB Baking Studio Member Rewards</p>
                   <h2 className="font-display text-2xl sm:text-3xl font-semibold text-white">
                     {member
                       ? `You have ${member.loyaltyPoints.toLocaleString()} loyalty points ready.`
                       : 'Earn 10 loyalty points for every $1 you spend.'}
                   </h2>
-                  <p className="text-sm text-[#DDE7E1] leading-relaxed">
+                  <p className="text-sm text-[#F4E3D7] leading-relaxed">
                     {member
                       ? 'Visit your member dashboard anytime to review your points ledger, past class bookings, and delivery schedules.'
                       : 'Sign in or join free in seconds. Track every earned point, view your past workshop bookings, and redeem points directly at checkout.'}
@@ -499,7 +499,7 @@ export default function App() {
                       setActiveView('members');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="h-11 px-5 rounded-lg bg-white text-[#1D1B18] text-sm font-medium hover:bg-[#F3F2EE] transition-colors whitespace-nowrap cursor-pointer"
+                    className="h-11 px-5 rounded-lg bg-[#E47D61] text-white text-sm font-medium hover:bg-[#C6583E] transition-colors whitespace-nowrap cursor-pointer"
                   >
                     {member ? 'Open My Loyalty Dashboard' : 'Members Log In / Join'}
                   </button>
@@ -511,38 +511,57 @@ export default function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[#E5E3DC] bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#625E57]">
-          <div className="space-y-1">
-            <div className="font-display text-base font-semibold text-[#1D1B18]">Crumb &amp; Co.</div>
-            <p>42 Joo Chiat Studio Lane · Open Tue–Sun, 9:30 AM – 7:00 PM</p>
-          </div>
+      <footer className="border-t border-[#EAD5C2] bg-[#FFFDF9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#7B5D4D]">
+          <button
+            type="button"
+            onClick={() => {
+              setActiveView('store');
+              setActiveCategory('all');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-3 text-left cursor-pointer group"
+          >
+            <img
+              src={STUDIO_LOGO_URL}
+              alt="ATB Baking Studio"
+              referrerPolicy="no-referrer"
+              className="w-10 h-10 rounded-full object-cover border border-[#EAD5C2]"
+            />
+            <div>
+              <div className="font-display text-base font-semibold text-[#472E22] group-hover:text-[#C6583E] transition-colors">
+                ATB Baking Studio
+              </div>
+              <p>42 Joo Chiat Studio Lane · Open Tue–Sun, 9:30 AM – 7:00 PM</p>
+            </div>
+          </button>
+
           <div className="flex flex-wrap items-center gap-6">
             <button
               type="button"
               onClick={() => handleSelectCategory('easy-packs')}
-              className="hover:text-[#1D1B18] cursor-pointer"
+              className="hover:text-[#C6583E] cursor-pointer"
             >
               Easy Packs
             </button>
             <button
               type="button"
               onClick={() => handleSelectCategory('classes')}
-              className="hover:text-[#1D1B18] cursor-pointer"
+              className="hover:text-[#C6583E] cursor-pointer"
             >
               Baking Classes
             </button>
             <button
               type="button"
               onClick={() => handleSelectCategory('premixes')}
-              className="hover:text-[#1D1B18] cursor-pointer"
+              className="hover:text-[#C6583E] cursor-pointer"
             >
               Premixes
             </button>
             <button
               type="button"
               onClick={() => handleSelectCategory('moulds')}
-              className="hover:text-[#1D1B18] cursor-pointer"
+              className="hover:text-[#C6583E] cursor-pointer"
             >
               Moulds
             </button>
@@ -552,7 +571,7 @@ export default function App() {
                 setActiveView('members');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="hover:text-[#1D1B18] cursor-pointer"
+              className="hover:text-[#C6583E] cursor-pointer"
             >
               Members Log In
             </button>
@@ -564,7 +583,7 @@ export default function App() {
       {toastMessage && (
         <div
           role="status"
-          className="fixed bottom-5 right-5 z-40 px-4 py-3 rounded-lg bg-[#1D1B18] text-white text-xs font-medium shadow-lg flex items-center gap-3"
+          className="fixed bottom-5 right-5 z-40 px-4 py-3 rounded-lg bg-[#472E22] text-white text-xs font-medium shadow-lg flex items-center gap-3"
         >
           <span>{toastMessage}</span>
           <button
@@ -573,7 +592,7 @@ export default function App() {
               setToastMessage(null);
               setIsCartOpen(true);
             }}
-            className="underline text-[#C5D8CD] hover:text-white cursor-pointer"
+            className="underline text-[#F7C5B4] hover:text-white cursor-pointer"
           >
             View Bag
           </button>

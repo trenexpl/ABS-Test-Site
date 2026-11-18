@@ -10,8 +10,8 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    background-color: #F9F9F7;
-    color: #1D1B18;
+    background-color: #FFF9F2;
+    color: #472E22;
   }
 
   h1, h2, h3, .font-display {
